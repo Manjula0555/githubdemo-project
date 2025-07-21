@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages{
+        stage('print Hostname'){
+            steps{
+               sh 'hostname'
+            }
+        }
+        stage('Ip Address'){
+            steps{
+                sh 'hostname -I'
+            }
+        }
+        stage('Cpu Details'){
+            steps{
+                sh 'lscpu'
+            }
+        }
+    }
+}
